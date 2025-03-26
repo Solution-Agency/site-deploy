@@ -21,3 +21,7 @@ version: build
 	docker image tag $(IMAGE) $(IMAGE_NAME):v$(MAJOR_VERSION) && \
 	docker image tag $(IMAGE) $(IMAGE_NAME):v$(MAJOR_VERSION).$(MINOR_VERSION) && \
 	docker image tag $(IMAGE) $(IMAGE_NAME):v$(MAJOR_VERSION).$(MINOR_VERSION).$(PATCH_VERSION)
+
+test-unit:
+	./tests/test_functions.sh
+	./tests/test_generate_path_excludes.sh

@@ -1,5 +1,18 @@
 # @wpengine/site-deploy
 
+## 1.0.5
+
+### Patch Changes
+
+- 54ec5ce: Fixes a bug when deploying to dirs other than site root by dynamically generating file exclusion lists on the fly
+
+## 1.0.4
+
+### Patch Changes
+
+- 30cdd52: Fixes a bug that caused certain flags in the FLAGS option to be incorrectly parsed by rsync
+- f8fa689: Adds wp-cache-memcached to default excludes list
+
 ## 1.0.3
 
 ### Patch Changes
