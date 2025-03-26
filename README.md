@@ -1,5 +1,7 @@
-# wpengine/site-deploy
-Base image to build VCS integrations enabling customers to deploy their site to WP Engine
+# solutionagency/site-deploy
+
+Base image to build VCS integrations enabling customers to deploy their site to WP Engine + npm and a pre-deploy
+script to allow for automatic building of JS.
 
 ## How to Build
 
@@ -42,6 +44,7 @@ FLAGS=-azvr --inplace --exclude='.*'
 ```sh
 export WPE_SSHG_KEY_PRIVATE=`cat ~/.ssh/my_sshg_key_rsa`
 ```
+
 4. Run the deploy!
 
 ```sh
@@ -50,5 +53,5 @@ export WPE_SSHG_KEY_PRIVATE=`cat ~/.ssh/my_sshg_key_rsa`
     --env-file ./.env \
     -v $(pwd):/site \
     --workdir=/site \
-    wpengine/site-deploy:latest
+    solutionagency/site-deploy:latest
 ```
