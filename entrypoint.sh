@@ -129,8 +129,10 @@ sync_files() {
 
   set -x
   rsync --rsh="ssh -v -p 22 -i ${WPE_SSHG_KEY_PRIVATE_PATH} -o StrictHostKeyChecking=no -o 'ControlPath=$SSH_PATH/ctl/%C'" \
-        "${FLAGS_ARRAY[@]}" \
-        --exclude-from=<( { { set +x; } 2>/dev/null; echo "$exclude_from"; } ) \ --chmod=D775,F664 "${SRC_PATH}" "${WPE_DESTINATION}"
+    "${FLAGS_ARRAY[@]}" \
+    --exclude-from=<( { { set +x; } 2>/dev/null; echo "$exclude_from"; } ) \
+    --chmod=D775,F664 \
+    "${SRC_PATH}" "${WPE_DESTINATION}"
 set +x
   if [[ -n ${SCRIPT} || -n ${CACHE_CLEAR} ]]; then
 
